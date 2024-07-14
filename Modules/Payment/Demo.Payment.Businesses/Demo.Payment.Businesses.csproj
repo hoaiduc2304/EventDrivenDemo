@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libary\Core\DNH.Infrastructure.Queues.Kafka\DNH.Infrastructure.Queues.Kafka.csproj" />
+    <ProjectReference Include="..\Demo.Payment.Repositories\Demo.Payment.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

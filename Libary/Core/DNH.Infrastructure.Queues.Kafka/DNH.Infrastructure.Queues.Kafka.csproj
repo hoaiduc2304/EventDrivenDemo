@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="8.0.4" />
+		<PackageReference Include="Confluent.Kafka" Version="2.5.0" />
+		<PackageReference Include="Ardalis.GuardClauses" Version="4.3.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Consumers\" />
+	</ItemGroup>
+</Project>

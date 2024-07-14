@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libary\Core\DNH.Infrastructure.Queues.Kafka\DNH.Infrastructure.Queues.Kafka.csproj" />
+    <ProjectReference Include="..\Demo.Orders.Abstract\Demo.Orders.Domain.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Confluent.Kafka" Version="2.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Kafkas\" />
+	</ItemGroup>
+</Project>
