@@ -24,6 +24,8 @@ namespace Demo.Payment.Asbtract.Entities
         [Column("creditcardno")]
         public string? CreditCardNo { get; set; }
 
+        public decimal Amount { get; set; }
+
         [JsonProperty("paymenttype")]
         [Column(TypeName = "varchar(50)")]
         public PaymentRequestType? PaymentType { get; set; }
@@ -31,12 +33,13 @@ namespace Demo.Payment.Asbtract.Entities
 
         public PaymentTransaction() { }
 
-        public PaymentTransaction(Guid orderId, Guid customerId,  string creditCardNo, PaymentRequestType PaymentType)
+        public PaymentTransaction(Guid orderId, Guid customerId,  string creditCardNo,decimal Amount, PaymentRequestType PaymentType)
         {
             OrderId = orderId;
             CustomerId = customerId;
             CreditCardNo = creditCardNo;
             PaymentType = PaymentType;
+            Amount = Amount;
         }
     }
 

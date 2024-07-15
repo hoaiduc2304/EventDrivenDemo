@@ -69,7 +69,7 @@ namespace Demo.Payment.Businesses.Queues.Consumers
                     {
                         var message = consumeResult.Message.Value;
                        
-                        var result = JsonConvert.DeserializeObject<SagaEvent<Guid, PurchaseOrderEvent>>(message);
+                        var result = JsonConvert.DeserializeObject<SagaEvent<Guid, PurchaseOrderSagaEvent>>(message);
                         if (result != null)
                         {
                             try
@@ -77,7 +77,8 @@ namespace Demo.Payment.Businesses.Queues.Consumers
                                 await context.SaveChangeAsync(new PaymentTransaction()
                                 {
                                     OrderId = result.Payload.OrderId,
-                                    CustomerId = result.Payload.CustomerId,
+                                    CustomerId = result.Payload.customerid,
+                                    Amount = result.Payload.TotalAmount,
                                     id = Guid.NewGuid(),
                                 });
                             }

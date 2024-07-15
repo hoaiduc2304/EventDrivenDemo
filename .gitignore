@@ -74,3 +74,10 @@ Plugin.Abstraction/.vs/ProjectEvaluation/plugin.abstraction.projects.v7.bin
 /Modules/Payment/Demo.Payment.Controllers/obj
 /Modules/Payment/Demo.Payment.Repositories/bin/Debug/net8.0
 /Modules/Payment/Demo.Payment.Repositories/obj
+/Modules/Orders/Demo.Orders.Api/bin/Debug/net8.0
+/Modules/Orders/Demo.Orders.Api/obj
+/Modules/Orders/Demo.Orders.Application/bin/Debug/net8.0
+/Modules/Orders/Demo.Orders.Application/obj
+/Modules/Orders/Demo.Orders.Domain/bin/Debug/net8.0
+/Modules/Orders/Demo.Orders.Domain/obj
+/Modules/Orders/Demo.Orders.Testing/obj

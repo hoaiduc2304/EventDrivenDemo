@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Demo.Payment.Asbtract.Common.Events;
-using Newtonsoft.Json.Linq;
-namespace Demo.Payment.Asbtract.Dtos.Orders.Event
+
+namespace Demo.Orders.Domain.Events.Orders
 {
     public class PurchaseOrderSagaEvent
     {
