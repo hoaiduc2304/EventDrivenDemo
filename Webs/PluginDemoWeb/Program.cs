@@ -17,9 +17,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 var pluginSettings = new PluginSettings();
 builder.Configuration.Bind("PluginLoader", pluginSettings);
-//var kaffka = new KafkaSettings();
-//builder.Configuration.Bind("Kafka", kaffka);
-//builder.Services.AddSingleton(kaffka);
 builder.Services.RegisterDB(builder.Configuration, PluginSettings.Assemblies);
 builder.Services.AddMyServices(builder.Configuration);
 builder.Services.AddSwaggerGen();
