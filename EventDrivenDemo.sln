@@ -36,6 +36,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Payment.Repositories", "Modules\Payment\Demo.Payment.Repositories\Demo.Payment.Repositories.csproj", "{E90FAA30-C485-414D-AAE8-690BD7518191}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dockers", "Dockers", "{C4498194-3DD5-4AAB-BC3D-F4456F3A4A24}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Orders.Api", "Modules\Orders\Demo.Orders.Api\Demo.Orders.Api.csproj", "{6B6485C8-ACC5-4969-A314-4FF32F3E2C0D}"
 EndProject
