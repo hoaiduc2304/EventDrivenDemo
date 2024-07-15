@@ -22,22 +22,22 @@ namespace Demo.Orders.Application.Features.PurchaseOrders.Services
             _mediator = mediator;
         }
 
-        public async Task CreateOrder(CreatePurchaseOrderCommand command)
+        public async Task CreateOrderAsync(CreatePurchaseOrderCommand command)
         {
             await _mediator.Send(command);
         }
 
-        public async Task AddItemToOrder(AddItemToOrderCommand command)
+        public async Task AddItemToOrderAsync(AddItemToOrderCommand command)
         {
             await _mediator.Send(command);
         }
 
-        public async Task<OrderDTO> GetOrderById(Guid orderId)
+        public async Task<OrderDTO> GetOrderByIdAsync(Guid orderId)
         {
             return await _mediator.Send(new GetPurchaseOrderByIdQuery(orderId));
         }
 
-        public async Task<PagedResultDto<OrderDTO>> GetPaging(GetPagingPurchaseOrderQuery query)
+        public async Task<PagedResultDto<OrderDTO>> GetPagingAsync(GetPagingPurchaseOrderQuery query)
         {
             return await _mediator.Send(query);
         }

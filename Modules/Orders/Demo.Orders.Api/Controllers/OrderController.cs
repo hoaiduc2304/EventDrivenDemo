@@ -32,7 +32,7 @@ namespace Demo.Orders.Api.Controllers
                 OrderDate = request.OrderDate,
                 LineItems = request.LineItems
             };
-            await _orderService.CreateOrder(command);
+            await _orderService.CreateOrderAsync(command);
             return Ok();
         }
 
@@ -40,14 +40,14 @@ namespace Demo.Orders.Api.Controllers
         public async Task<IActionResult> GetOrderById(Guid orderId)
         {
            
-            var order = await _orderService.GetOrderById(orderId);
+            var order = await _orderService.GetOrderByIdAsync(orderId);
             return Ok(order);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllOrders([FromQuery] GetPagingPurchaseOrderQuery query)
         {
-            var orders = await _orderService.GetPaging(query);
+            var orders = await _orderService.GetPagingAsync(query);
             return Ok(orders);
         }
     }

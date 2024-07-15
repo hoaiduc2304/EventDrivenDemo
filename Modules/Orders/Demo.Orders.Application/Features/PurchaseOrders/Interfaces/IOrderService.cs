@@ -13,9 +13,9 @@ namespace Demo.Orders.Application.Features.PurchaseOrders.Interfaces
 {
     public interface IOrderService
     {
-        Task CreateOrder(CreatePurchaseOrderCommand command);
-        Task AddItemToOrder(AddItemToOrderCommand command);
-        Task<OrderDTO> GetOrderById(Guid OrderId);
-        Task<PagedResultDto<OrderDTO>> GetPaging(GetPagingPurchaseOrderQuery query);
+        Task CreateOrderAsync(CreatePurchaseOrderCommand command);
+        Task AddItemToOrderAsync(AddItemToOrderCommand command);
+        Task<OrderDTO> GetOrderByIdAsync(Guid OrderId);
+        Task<PagedResultDto<OrderDTO>> GetPagingAsync(GetPagingPurchaseOrderQuery query);
     }
 }
