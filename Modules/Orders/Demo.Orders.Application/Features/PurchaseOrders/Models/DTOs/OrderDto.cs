@@ -12,5 +12,7 @@ namespace Demo.Orders.Application.Features.PurchaseOrders.Models.DTOs
         public Guid CustomerId { get; set; }
         public List<OrderItemDTO> Items { get; set; }
         public decimal TotalAmount { get; set; }
+        public string Status { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }

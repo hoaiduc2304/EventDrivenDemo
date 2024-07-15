@@ -1,11 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Plugin.Abstraction.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Microsoft.Extensions.Configuration;
+using Demo.Orders.Application.Features.PurchaseOrders.OutBox;
+
+using Demo.Orders.Application.Features.PurchaseOrders.Services;
+using Demo.Orders.Application.Features.PurchaseOrders.Interfaces;
 
 namespace Demo.Orders.Application
 {
@@ -14,6 +13,8 @@ namespace Demo.Orders.Application
         public static IServiceCollection AddOrderServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(OrderApplicationServierRegister)));
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddHostedService<OutboxProcessor>();
             return services;
         }
     }

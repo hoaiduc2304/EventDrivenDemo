@@ -10,6 +10,7 @@ using Demo.Orders.Application;
 using Demo.Orders.Domain.Common;
 using DNH.Infrastructure.Queues.Kafka.Producers;
 using Demo.Orders.Infastructure.Persistence.Repositories;
+using Demo.Orders.Infastructure;
 namespace Demo.Orders.Api
 {
     public  class OrderPlugin : IPlugin
@@ -18,19 +19,8 @@ namespace Demo.Orders.Api
         public string Name => "OrderPlugin";
         public void RegisterDI(IServiceCollection services, IConfiguration config)
         {
-            var kaffka = new KafkaSettings();
-            config.Bind(SystemConfigCons.KafkaConfig, kaffka);
-            services.AddSingleton(kaffka);
-            // register KafkaProducer
-            services.AddSingleton<KafkaClientHandle>();
-            services.AddSingleton<IKafkaProducer, JsonKafkaProducer>();
-            
-            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
-            services.AddScoped<IOutboxRepository, OutboxRepository>();
+            services.AddOrderRepository(config);
             services.AddOrderServices(config);
-            services.AddHostedService<OutboxProcessor>();
-
-            //builder.Services.AddHostedService<OrderConsumerService>();
         }
        
     }

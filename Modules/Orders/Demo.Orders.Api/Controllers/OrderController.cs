@@ -36,21 +36,6 @@ namespace Demo.Orders.Api.Controllers
             return Ok();
         }
 
-
-        [HttpPost("{orderId}/items")]
-        public async Task<IActionResult> AddItemToOrder(Guid orderId, [FromBody] AddItemToOrderRequest request)
-        {
-            var command = new AddItemToOrderCommand
-            {
-                OrderId = orderId,
-                Item = request.Item,
-                Quantity = request.Quantity,
-                Price = request.Price
-            };
-            await _orderService.AddItemToOrder(command);
-            return Ok();
-        }
-
         [HttpGet("{orderId}")]
         public async Task<IActionResult> GetOrderById(Guid orderId)
         {
